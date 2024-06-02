@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Profile</title>
+  <style>
+    :root {
+      --main-blue: #71b7e6;
+      --main-grey: #ccc;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .container {
+      max-width: 700px;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    }
+
+    .container .title {
+      text-align: center;
+      font-size: 25px;
+      font-weight: 500;
+      position: relative;
+      margin-top: 21px;
+    }
+
+    .container form .user__details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 0 12px 0;
+      width: 50%;
+      margin-left: 160px;
+    }
+
+    .user__details .input__box {
+      margin-bottom: 21px;
+      width: 100%;
+    }
+
+    .user__details .input__box .details {
+      font-weight: 500;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .user__details .input__box input {
+      height: 45px;
+      width: 100%;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid var(--main-grey);
+      padding-left: 15px;
+      font-size: 16px;
+      border-bottom-width: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .user__details .input__box input:focus,
+    .user__details .input__box input:valid {
+      border-color: var(--main-blue);
+    }
+
+    .button {
+      margin-top: 20px;
+    }
+
+    .button input {
+      margin-left: 157px;
+      padding: 10px;
+      width: 25%;
+      outline: none;
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 5px;
+      background: blue;
+      cursor: pointer;
+    }
+
+    .button input:hover {
+      background: #1e57a1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Editing User</div>
+    <form action="#">
+      <div class="user__details">
+        <div class="input__box">
+          <span class="details">First Name</span>
+          <input type="text" required>
+        </div>
+        <div class="input__box">
+          <span class="details">Last Name</span>
+          <input type="text" required>
+        </div>
+        <div class="input__box">
+          <span class="details">Email</span>
+          <input type="email" required>
+        </div>
+      </div>
+      <div class="button">
+        <input type="submit" value="Update">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pin Code Availability</title>
+  <style>
+    .penContainer {
+      width: 400px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin: 50px auto;
+    }
+
+    .penLabel {
+      font-size: 17px;
+      margin-right: 10px;
+      color: #8b8282;
+    }
+
+    #pinCode {
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 10px;
+      width: 200px;
+      transition: border-color 0.3s;
+      outline: none;
+    }
+
+    #pinCode:hover,
+    #pinCode:focus {
+      border-color:#d3b5b5;
+    }
+
+    .checkingBtn {
+      padding: 15px 40px;
+      background-color: blue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .checkingBtn:hover {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="penContainer">
+    <label class="penLabel">Check Pin Code Availability:</label>
+    <div style="display: flex; align-items: center;">
+      <input type="text" id="pinCode" name="pinCode" placeholder="Enter Pin Code"><br/>
+      <button type="button" class="checkingBtn" onclick="checkAvailability()">Check</button>
+    </div>
+  </div>
+
+</body>
+</html>

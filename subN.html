@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.sub_main_div {
+  box-sizing: border-box;
+}
+
+.sub_main_div .columns {
+  float: left;
+  width: 30%;
+  padding: 8px;
+}
+
+.sub_main_div .price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.sub_main_div .header {
+/*  background-image: url('box-1.jpeg');*/
+  background-color: #034730;
+  color: white;
+  font-size: 25px;
+}
+
+.sub_main_div li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.sub_main_div .subprice {
+  background-color: #eee;
+  font-size: 24px;
+}
+
+.sub_main_div .button {
+  background-color: #034730;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .sub_main_div .columns {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<div class="sub_main_div">
+<div class="columns">
+  <ul class="price">
+    <li class="header">Basic</li>
+    <li class="subprice">$ 9.99 / year</li>
+    <li>10GB Storage</li>
+    <li>10 Emails</li>
+    <li>10 Domains</li>
+    <li>1GB Bandwidth</li>
+    <li class="white"><a href="#" class="button">Subscribe Now</a></li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header">Pro</li>
+    <li class="subprice">$ 24.99 / year</li>
+    <li>25GB Storage</li>
+    <li>25 Emails</li>
+    <li>25 Domains</li>
+    <li>2GB Bandwidth</li>
+    <li class="white"><a href="#" class="button">Subscribe Now</a></li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header">Premium</li>
+    <li class="subprice">$ 49.99 / year</li>
+    <li>50GB Storage</li>
+    <li>50 Emails</li>
+    <li>50 Domains</li>
+    <li>5GB Bandwidth</li>
+    <li class="white"><a href="#" class="button">Subscribe Now</a></li>
+  </ul>
+</div>
+</div>
+</body>
+</html>

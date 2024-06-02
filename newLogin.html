@@ -1,0 +1,242 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My Profile</title>
+  <style>
+    :root {
+      --main-blue: #71b7e6;
+      --main-grey: #ccc;
+    }
+
+    .login_container {
+      max-width: 600px;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    }
+
+    .login_main_div {
+      margin: 20px auto;
+      padding: 40px 50px;
+      max-width: 300px;
+      border-radius: 5px;
+      background: #fff;
+      box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    }
+
+    .login_main_div input {
+      width: 100%;
+      display: block;
+      box-sizing: border-box;
+      margin: 10px 0;
+      padding: 18px 18px;
+      font-size: 16px;
+      border-radius: 2px;
+      font-family: Raleway, sans-serif;
+    }
+
+    .login_main_div input[type=number] {
+      border: 1px solid #c0c0c0;
+      transition: .2s;
+    }
+
+    .login_main_div input[type=number]:hover {
+      border-color: #bcafae;
+      outline: none;
+      transition: all .2s ease-in-out;
+    }
+
+    .login_main_div input[type=submit] {
+      border: none;
+      background: blueviolet;
+      color: white;
+      font-weight: bold;
+      transition: 0.2s;
+      margin: 20px 0px;
+    }
+
+    .login_main_div input[type=submit]:hover {
+      background: blue;
+    }
+
+    .login_main_div h2 {
+      margin: 20px 0 0;
+      color: white;
+      font-size: 28px;
+    }
+
+    .login_main_div p {
+      font-size: 18px;
+/*      margin-bottom: 40px;*/
+      color: gray;
+    }
+
+    .login_main_div h2,
+    .login_main_div p,
+    .login_main_div a {
+      text-align: center;
+    }
+
+    .heading_div {
+      text-align: center;
+      background-color: #FFA500;
+      color: #fff;
+      padding: 20px;
+      box-shadow: 0px 2px 5px rgb(0 0 0 / 20%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login_container">
+    <form class="login_main_div">
+      <div class="heading_div">
+        <h2>Login/Signup</h2>
+      </div>
+      <p>Phone number</p>
+      <input type="number" placeholder="User Number" />
+      <input type="submit" value="Log In" />
+    </form>
+  </div>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My Profile</title>
+  <style>
+    :root {
+      --main-blue: #71b7e6;
+      --main-grey: #ccc;
+    }
+
+    .login_container {
+      max-width: 600px;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    }
+
+    .login_main_div {
+      margin: 20px auto;
+      padding: 40px 50px;
+      max-width: 300px;
+      border-radius: 5px;
+      background: #fff;
+      box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    }
+
+    .login_main_div input {
+      width: 100%;
+      display: block;
+      box-sizing: border-box;
+      margin: 10px 0;
+      padding: 18px 18px;
+      font-size: 16px;
+      border-radius: 2px;
+      font-family: Raleway, sans-serif;
+    }
+
+    .login_main_div input[type=number] {
+      border: 1px solid #c0c0c0;
+      transition: .2s;
+    }
+
+    .login_main_div input[type=number]:hover {
+      border-color: #bcafae;
+      outline: none;
+      transition: all .2s ease-in-out;
+    }
+
+    .login_main_div input[type=submit] {
+      border: none;
+      background: blueviolet;
+      color: white;
+      font-weight: bold;
+      transition: 0.2s;
+      margin: 20px 0px;
+    }
+
+    .login_main_div input[type=submit]:hover {
+      background: blue;
+    }
+
+    .login_main_div h2 {
+      margin: 20px 0 0;
+      color: white;
+      font-size: 28px;
+    }
+
+    .login_main_div p {
+      font-size: 18px;
+      color: gray;
+    }
+
+    .login_main_div h2,
+    .login_main_div p,
+    .login_main_div a {
+      text-align: center;
+    }
+
+    .heading_div {
+      text-align: center;
+      background-color: #FFA500;
+      color: #fff;
+      padding: 20px;
+      box-shadow: 0px 2px 5px rgb(0 0 0 / 20%);
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+</head>
+
+<body>
+  <div class="login_container">
+    <form class="login_main_div" id="loginForm">
+      <div class="heading_div">
+        <h2>Login/Signup</h2>
+      </div>
+      <p>Phone number</p>
+      <div class="phone-number-input">
+        <input type="hidden" id="phone_country_code" />
+        <input type="tel" id="phone_number" placeholder="Enter Your Mobile Number" required>
+      </div>
+      <input type="submit" value="Log In" />
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const phoneNumberField = document.getElementById("phone_number");
+      const phoneCountryCodeField = document.getElementById("phone_country_code");
+      const form = document.getElementById('loginForm');
+
+      let iti = window.intlTelInput(phoneNumberField, {
+        initialCountry: "in",
+        separateDialCode: true,
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        formatOnDisplay: false,
+      });
+      phoneNumberField.addEventListener('countrychange', function () {
+        let countryData = iti.getSelectedCountryData();
+        phoneCountryCodeField.value = countryData.dialCode;
+      });
+      form.addEventListener('submit', function (event) {
+        let countryData = iti.getSelectedCountryData();
+        phoneCountryCodeField.value = countryData.dialCode;
+      });
+    });
+  </script>
+</body>
+
+</html>

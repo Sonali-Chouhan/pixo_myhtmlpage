@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    width: 100%;
+    background: url(bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  nav {
+    width: 1200px;
+    height: 80px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    direction: none;
+    color: black;
+  }
+
+  nav .logo {}
+
+  .imgicons a {
+    margin-right: 10px;
+  }
+
+  /* slide */
+  * {
+    box-sizing: border-box
+  }
+
+  .mySlides {
+    display: none;
+    height: 300px;
+  }
+
+  .mySlides img {
+    vertical-align: middle;
+    height: 100%;
+  }
+
+  .slideshow-container {
+    position: relative;
+  }
+
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .text {
+    color: #F2F2F2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .numbertext {
+    color: #F2F2F2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #717171;
+  }
+
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+
+    .prev,
+    .next,
+    .text {
+      font-size: 11px;
+    }
+  }
+
+  .carousel-indicators {
+    bottom: 0px;
+  }
+
+  .img-thumbnail {
+    width: 170px;
+    height: 160px;
+    margin-right: 10px;
+    object-fit: cover;
+  }
+
+  /*category*/
+  .categorybox {
+    margin: 0 89px
+  }
+
+  .categorybox h1 {
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .categorybox row {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+  }
+
+  .categorybox column {
+    flex: 1;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .categorybox .column img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /*    bestseller*/
+  
+
+  .bestsellerBox {
+    
+  }
+  .bestsellerBox row {
+       display: flex;
+    flex-direction: row;
+    justify-content: space-around
+/*    margin: 30px;*/
+  }
+
+  .bestsellerBox column {
+    flex: 1;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .bestsellerBox h1 {
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .bestsellerBox h4 {
+    margin-top: 22px;
+    font-family: inherit;
+  }
+
+  .checked {
+    color: #fdb823;
+  }
+
+  .star-rating {
+    display: flex;
+    justify-content: center;
+  }
+
+  .fa {
+    margin: 0 2px;
+  }
+
+  .fa-star.checked {
+    color: orange;
+  }
+
+  /* footer */
+  .footer {
+    background: gainsboro;
+    padding: 30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+
+  .footer .row {
+    width: 100%;
+    margin: 1% 0%;
+    padding: 0.6% 0%;
+    color: gray;
+    font-size: 0.8em;
+  }
+
+  .footer .row a {
+    text-decoration: underline;
+    color: gray;
+    transition: 0.5s;
+  }
+
+  .footer .row a:hover {
+    color: #fff;
+  }
+
+  .footer .row ul {
+    width: 100%;
+  }
+
+  .footer .row ul li {
+    display: inline-block;
+    margin: 0px 30px;
+  }
+
+  .footer .row a i {
+    font-size: 2em;
+    margin: 0% 1%;
+  }
+
+  .footer .row.underline-text {
+    position: relative;
+  }
+
+  .footer .row.underline-text:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+    position: absolute;
+    bottom: -5px;
+  }
+
+  @media (max-width: 720px) {
+    .footer {
+      text-align: left;
+      padding: 5%;
+    }
+
+    .footer .row ul li {
+      display: block;
+      margin: 10px 0px;
+      text-align: left;
+    }
+
+    .footer .row a i {
+      margin: 0% 3%;
+    }
+  }
+</style>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <h1 class="animation infinite heartBeat">
+          <img src="logoimg.png" width="140" height="35">
+        </h1>
+      </div>
+      <a href="file:///home/rails/website/infosys/about.html" , target="_blank">category</a>
+      <a href="file:///home/rails/website/infosys/company.html" , target="_blank">Refer a friend</a>
+      <a href="file:///home/rails/website/infosys/Dedails.html" , target="_blank">consult a Nutritionst</a>
+      <a href="file:///home/rails/website/infosys/prectice.html" , target="_blank">Subscribe Now</a>
+      <a href="file:///home/rails/website/infosys/product.html" , target="_blank">Contact</a>
+      <div class="imgicons">
+        <a><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+          </svg>
+          <a> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp"
+              viewBox="0 0 16 16">
+              <path
+                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+            </svg>
+          </a>
+          <a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person"
+              viewBox="0 0 16 16">
+              <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+            </svg>
+          </a>
+          <a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+              viewBox="0 0 16 16">
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+            </svg>
+          </a>
+      </div>
+    </nav>
+  </header>
+  <!-- slides show -->
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="slide-6.webp" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+      <img src="slide-2.jpeg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+      <img src="slide-3.jpeg" style="width:100%">
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
+  <br>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  <!-- categoty box -->
+  <div class="categorybox">
+    <h1 class="border-bottom pb-2">Shop By Categories</h1><br>
+    <div class="carousel-inner">
+      <div class="carousel-item ">
+        <img src="box-1.jpeg" class="img-thumbnail square-image item active" alt="AWS">
+        <img src="box-2.jpg" class="img-thumbnail square-image item" alt="Blockchain">
+        <img src="box-3.jpeg" class="img-thumbnail square-image item" alt="C++">
+        <img src="box-4.jpeg" class="img-thumbnail square-image item" alt="Java">
+        <img src="box-5.webp" class="img-thumbnail square-image item" alt="MSBI">
+        <img src="box-6.jpeg" class="img-thumbnail square-image item" alt="PHP">
+      </div>
+    </div>
+  </div>
+  <!-- bestsellerBox -->
+ <!--  <div class="bestsellerBox">
+    <h1>Try Our Best Seller</h1>
+    <div class="row">
+      <div class="column" style="background-color:white;">
+        <img src="box-6.jpeg" alt="Image 2">
+        <div class="size">
+          <h4>Floryo 100% Whole Chana Sattu</h4>
+        </div>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+
+        <div style="text-align: center;">
+          <span style="display: inline; margin-right: 20px;">
+            <h3 style="display: inline;">Net wt.:</h3>1 kg
+          </span>
+          <span style="display: inline;">
+            <h3 style="display: inline;">MRP:</h3>₹ 85
+          </span>
+        </div>
+      </div>
+      <div class="column" style="background-color:white;">
+        <img src="box-6.jpeg" alt="Image 3">
+        <div class="size">
+          <h4>Floryo Cheese & Garlic with Wheat Atta</h4>
+        </div>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+
+        <div style="text-align: center;">
+          <span style="display: inline; margin-right: 20px;">
+            <h3 style="display: inline;">Net wt.:</h3>1 kg
+          </span>
+          <span style="display: inline;">
+            <h3 style="display: inline;">MRP:</h3>₹ 85
+          </span>
+        </div>
+      </div>
+      <div class="column" style="background-color:white;">
+        <img src="box-6.jpeg" alt="Image 4">
+        <div class="size">
+          <h4>Floryo Gluten Free Atta</h4>
+        </div>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+
+        <div style="text-align: center;">
+          <span style="display: inline; margin-right: 20px;">
+            <h3 style="display: inline;">Net wt.:</h3>1 kg
+          </span>
+          <span style="display: inline;">
+            <h3 style="display: inline;">MRP:</h3>₹ 85
+          </span>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <br>
+  <!-- footer -->
+  <footer>
+    <div class="footer">
+      <div class="row">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+
+      <div class="row">
+        <ul>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Career</a></li>
+        </ul>
+      </div>
+
+      <div class="row underline-text">
+        admin@example.com
+      </div>
+    </div>
+  </footer>
+  <!-- for auto slides -->
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+    setInterval(function () {
+      plusSlides(1);
+    }, 2000); // Adjust the interval (in milliseconds) as needed
+  </script>
+</body>
+
+</html>

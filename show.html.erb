@@ -1,0 +1,133 @@
+
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+  max-width: 50%;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  padding: 60px;
+  margin-top: 60px;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+.title_para{
+  color: blue;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color:blue;
+  text-align: center;
+  cursor: pointer;
+  width: 25%;
+  font-size: 18px;
+}
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+.img-thumbnail {
+  width: 20%; /* Adjust the width as needed */
+  height: 20%; /* Adjust the height as needed */
+}
+.rounded-circle {
+  border-radius: 2%;
+}
+
+.edit-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue color */
+  color: #fff; /* White text color */
+  text-align: center;
+  text-decoration: none;
+  border-radius: 1px; /* Optional: Add rounded corners */
+}
+
+.edit-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+</style>
+</head>
+<body>
+
+<div class="card">
+  <%= link_to(image_tag('PL-Black.png', alt: 'Description of the image', class: 'rounded-circle img-thumbnail')) %>
+  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+  <p class="title_para"><i class="fa fa-envelope" style="font-size:19px;color:black"></i> : <%= @user.email %></p>
+  <p class="title_para"><i class="fa fa-phone" style="font-size:19px;color:black"></i> : <%= @user.phone_country_code %><%= @user.phone_number %></p>
+  <%= link_to I18n.t('spree.edit'), edit_account_path, class: 'edit-button' %>
+</div>
+
+<div class="card">
+   <div class="account-summary__orders">
+    <h2><%= I18n.t('spree.my_orders') %></h2>
+    <% if @orders.present? %>
+      <% @orders.each do |order| %>
+        <dl class="account-order">
+          <div class="account-order__detail">
+            <dt><%= I18n.t(:number, scope: 'activerecord.attributes.spree/order') %></dt>
+            <dd><%= link_to order.number, order_url(order) %></dd>
+          </div>
+
+          <div class="account-order__detail">
+            <dt><%= I18n.t('spree.date') %></dt>
+            <dd><%= l order.completed_at.to_date %></dd>
+          </div>
+
+          <div class="account-order__detail">
+            <dt><%= I18n.t('spree.status') %></dt>
+            <dd><%= I18n.t("spree.order_state.#{order.state}").titleize %></dd>
+          </div>
+
+          <div class="account-order__detail">
+            <dt><%= I18n.t('spree.payment_state') %></dt>
+            <dd><%= I18n.t("spree.payment_states.#{order.payment_state}").titleize if order.payment_state %></dd>
+          </div>
+
+          <div class="account-order__detail">
+            <dt><%= I18n.t('spree.shipment_state') %></dt>
+            <dd><%= I18n.t("spree.shipment_states.#{order.shipment_state}").titleize if order.shipment_state %></dd>
+          </div>
+
+          <div class="account-order__detail">
+            <dt><%= I18n.t('spree.total') %></dt>
+            <dd><%= order.display_total %></dd>
+          </div>
+        </dl>
+      <% end %>
+    <% else %>
+      <p><%= I18n.t('spree.you_have_no_orders_yet') %></p>
+    <% end %>
+  </div>
+
+  <%= form_with(url: logout_path, method: Devise.sign_out_via, local: true) do %>
+    <%= button_tag(t("spree.logout"), class: 'button-primary') %>
+  <% end %>
+</div>
+</body>
+</html> 
+
+</div>

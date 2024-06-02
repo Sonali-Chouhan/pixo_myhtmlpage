@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    header {
+      width: 100%;
+      background: url(bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav {
+      width: 100%;
+      max-width: 1000px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 36px;
+    }
+
+    a {
+      color: gray;
+      margin: 0 15px;
+      visibility: inherit;
+      text-align: left;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #d4cecd;
+    }
+
+    .search-bar {
+      border-bottom: 1px solid gray;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-input {
+      color: gray;
+      padding: 0px;
+      margin-right: 2px;
+      border: none;
+      font-size: 14px;
+    }
+
+    .search-button {
+      padding: 10px;
+      background-color: transparent;
+      color: gray;
+      border: none;
+      cursor: pointer;
+    }
+
+    .logo img {
+      width: 140px;
+      height: 35px;
+    }
+
+    .imgicons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .imgicons a {
+      margin-right: 10px;
+    }
+
+    .loginText {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /*  footer  */
+    .footer {
+      border-radius: 5px;
+      bottom: 0;
+      box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, .6));
+      left: 0;
+      right: 0;
+      background: gainsboro;
+      padding: 30px 0px;
+      font-family: 'Play', sans-serif;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .footer .row {
+      width: 100%;
+      margin: 1% 0%;
+      padding: 0.6% 0%;
+      color: gray;
+      font-size: 0.8em;
+    }
+
+    .footer .row a {
+      text-decoration: underline;
+      color: gray;
+      transition: 0.5s;
+    }
+
+    .footer .row a:hover {
+      color: #fff;
+    }
+
+    .footer .row ul {
+      width: 100%;
+    }
+
+    .footer .row ul li {
+      display: inline-block;
+      margin: 0px 30px;
+    }
+
+    .footer .row a i {
+      font-size: 2em;
+      margin: 0% 1%;
+    }
+
+    .footer .row.underline-text {
+      position: relative;
+    }
+
+    .footer .row.underline-text:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: gray;
+      position: absolute;
+      bottom: -5px;
+    }
+
+    @media (max-width: 720px) {
+      .footer {
+        text-align: left;
+        padding: 5%;
+      }
+
+      .footer .row ul li {
+        display: block;
+        margin: 10px 0px;
+        text-align: left;
+      }
+
+      .footer .row a i {
+        margin: 0% 3%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <h1 class="animation infinite heartBeat">
+          <img src="logoimg.png" alt="Logo">
+        </h1>
+      </div>
+
+      <a href="" target="_blank">Home</a>
+      <a href="" target="_blank">Shop</a>
+      <a href="" target="_blank">About</a>
+      <a href="" target="_blank">Contact</a>
+
+      <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search">
+        <button class="search-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="imgicons">
+        <a>
+          <div class="loginText">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" margin-right="" fill="currentColor"
+              class="bi bi-person-circle" viewBox="0 0 16 16" color="gray">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+              <path fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+            </svg>
+            <span> Log In</span>
+          </div>
+        </a>
+        <a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-bag-plus-fill"
+            viewBox="0 0 16 16" color="gray">
+            <path fill-rule="evenodd"
+              d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0M8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5z" />
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <!-- footer -->
+  <footer>
+    <div class="footer">
+      <div class="row">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+
+      <div class="row">
+        <ul>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Career</a></li>
+        </ul>
+      </div>
+
+      <div class="row underline-text">
+        admin@example.com
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
